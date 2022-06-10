@@ -1,6 +1,9 @@
 import logo from "./bl-logo.svg";
 import React from "react";
 import "./App.css";
+import Home from "./components/Home";
+import About from "./components/About";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 class App extends React.Component {
   url = "http://www.bridgelabz.com/";
   constructor() {
@@ -62,6 +65,21 @@ class App extends React.Component {
         <p>
           <strong>i.e Employability to all</strong>
         </p>
+        <ul>
+          <li>
+            <a href="/home">Home</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+        </ul>
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </BrowserRouter>
       </>
     );
   }
